@@ -66,7 +66,7 @@ class OpenAIModel(Model):
         logger.debug("config=<%s> | initializing", self.config)
 
         client_args = client_args or {}
-        self.client = openai.AsyncOpenAI(**client_args)
+        self.client = openai.AzureOpenAI(**client_args)
 
     @override
     def update_config(self, **model_config: Unpack[OpenAIConfig]) -> None:  # type: ignore[override]
